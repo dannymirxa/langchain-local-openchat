@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.11" integrity="sha384-0gxUXCCR8yv9FM2b+U3FDbsKthCI66oH5IA9fHppQq9DDMHuMauqq1ZHBpJxQ0J0" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Upload PDF to Text</title>
+</head>
+<body class="bg-indigo-500">
+    <h1>Upload PDF to Text</h1>
+    <div class="w-1/4 bg-red-500 h-screen flex">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Upload PDF Here
+            </div>          
+            <div class="card-body">
+                <form id='form' hx-encoding='multipart/form-data' hx-post='/upload' hx-target="#result">
+                    <input type='file' name='file'>
+                    <button>
+                        Upload
+                    </button>
+                    <progress id='progress' value='0' max='100'></progress>
+                    <div id="result" class="mt-6 text-xl"></div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
